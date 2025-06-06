@@ -1,0 +1,27 @@
+<div x-data="{
+    users: [
+        { id: 1, name: 'Anna', email: 'anna@example.com' },
+        { id: 2, name: 'Ben', email: 'ben@example.com' },
+        { id: 3, name: 'Carla', email: 'carla@example.com' }
+    ],
+    suche: ''
+}">
+    <input type="text" x-model="suche" placeholder="Suchen..." class="border p-2 mb-4" />
+
+    <table class="table-auto w-full">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template x-for="user in users.filter(u => u.name.toLowerCase().includes(suche.toLowerCase()))" :key="user.id">
+                <tr>
+                    <td x-text="user.name"></td>
+                    <td x-text="user.email"></td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</div>
