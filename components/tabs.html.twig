@@ -1,0 +1,13 @@
+<div x-data="{ tab: 'erste' }">
+    <nav class="flex space-x-4 mb-4">
+        <button @click="tab = 'erste'" :class="{ 'font-bold': tab === 'erste' }">Erster Tab</button>
+        <button @click="tab = 'zweite'" :class="{ 'font-bold': tab === 'zweite' }">Zweiter Tab</button>
+    </nav>
+
+    <div x-show="tab === 'erste'">
+        <p>Inhalt des ersten Tabs.</p>
+    </div>
+    <div x-show="tab === 'zweite'">
+        <p>Inhalt des zweiten Tabs.</p>
+    </div>
+</div>
